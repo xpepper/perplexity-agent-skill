@@ -2,14 +2,16 @@
 
 ## Overview
 
-Create a skill that guides Claude to use the Perplexity CLI (`llm` with `llm-perplexity` plugin) for web research, replacing the less efficient MCP server approach.
+Create a skill that guides Claude to use the Perplexity CLI (`llm` with `llm-perplexity` plugin) for web research, deep reasoning, and independent validation. This skill complements (not replaces) standard web tools and can be invoked directly or spawned as a subagent.
 
 ## Goals
 
 1. Enable Claude to retrieve up-to-date information from the web
-2. Avoid token-heavy MCP server usage
-3. Automatic triggering when research needs are detected
-4. Efficient model selection based on query complexity
+2. Provide independent second opinions for decision validation
+3. Delegate complex analytical thinking to specialized reasoning models
+4. Avoid token-heavy MCP server usage
+5. Automatic triggering when research, validation, or reasoning needs are detected
+6. Efficient model selection based on query complexity and purpose
 
 ## Skill Structure
 
@@ -30,7 +32,7 @@ perplexity-web-research/
 ```yaml
 ---
 name: perplexity-web-research
-description: Web search and research using Perplexity CLI for up-to-date information. Automatically triggers when Claude needs current documentation, API references, recent technology changes, error message research, library versions, or any information where training data may be outdated. More efficient than MCP tools - uses llm CLI with perplexity plugin instead of context-heavy MCP servers.
+description: Leverage Perplexity CLI for web research, deep reasoning, and independent validation. Use when you need current/external knowledge, want a second opinion before decisions, or want to delegate complex analytical thinking to specialized reasoning models. Complements (not replaces) standard web tools. Can be invoked directly or spawned as a subagent. More efficient than MCP servers - uses llm CLI with perplexity plugin.
 ---
 ```
 
@@ -38,19 +40,16 @@ description: Web search and research using Perplexity CLI for up-to-date informa
 
 1. **Quick Start** - Basic usage pattern with most common command
 2. **Model Selection Guide** - Decision tree for choosing sonar/sonar-pro/sonar-deep-research/sonar-reasoning
-3. **When to Use** - Automatic trigger scenarios:
-   - Current documentation/API lookups
-   - Library versions and recent changes
-   - Error message research
-   - Technology verification
-   - Current events
-   - Facts that may be outdated
-4. **When NOT to Use** - Anti-patterns:
-   - Local codebase questions
-   - Information answerable from existing context
-5. **Usage Examples** - Concrete examples for each model type
-6. **Setup Reference** - Link to references/setup.md
-7. **Context Marker** - Document the 🔍 emoji pattern
+3. **When to Use** - Three primary scenarios:
+   - Current/external knowledge (documentation, versions, errors, current events)
+   - Second opinions (architecture decisions, technology choices, validation)
+   - Deep reasoning delegation (complex problem solving, algorithmic thinking, trade-off analysis)
+4. **When NOT to Use** - Anti-patterns and clarification that this complements other web tools
+5. **Usage Examples** - Concrete examples for each scenario and model type
+6. **Using as a Subagent** - Guidance on when to invoke directly vs spawn subagent
+7. **Setup Reference** - Link to references/setup.md
+8. **Context Marker** - Document the 🔍 emoji pattern
+9. **Relationship with Other Tools** - Clarify complementary nature with standard web tools
 
 **Key principles**:
 - Concise (target: < 200 lines)
@@ -74,12 +73,27 @@ description: Web search and research using Perplexity CLI for up-to-date informa
 ## Trigger Strategy
 
 **Automatic detection** - Skill description includes comprehensive trigger scenarios so Claude proactively invokes it when:
+
+### Current/External Knowledge
 - Documentation lookup needed
 - Current events mentioned
 - API/library version questions
 - Error messages to research
 - Technology verification needed
 - User's question suggests outdated knowledge
+
+### Second Opinions
+- Architecture or design decisions being made
+- Technology choice comparisons needed
+- Validation of approach before implementation
+- Alternative perspectives requested
+
+### Deep Reasoning
+- Complex multi-step problem solving
+- Algorithmic optimization questions
+- System architecture design
+- Trade-off analysis with many variables
+- Mathematical or quantitative reasoning needed
 
 ## Design Decisions
 
@@ -114,10 +128,13 @@ Following skill-creator workflow:
 ## Expected Outcomes
 
 After implementation:
-- Claude automatically uses Perplexity for research without explicit prompting
-- Efficient model selection based on query complexity
+- Claude automatically uses Perplexity for research, validation, and reasoning without explicit prompting
+- Efficient model selection based on query complexity and purpose
 - Reduced context window usage compared to MCP approach
-- Clear guidance on when web research is (and isn't) needed
+- Clear guidance on when to use Perplexity vs standard web tools
+- Understanding of when to invoke directly vs spawn subagent
+- Independent validation capability for architecture decisions
+- Delegation of complex reasoning to specialized models
 - Easy setup for new users via references/setup.md
 
 ## Validation Criteria
@@ -125,7 +142,11 @@ After implementation:
 Skill is successful if:
 - ✅ Automatically triggers for documentation lookups
 - ✅ Automatically triggers for current events
+- ✅ Automatically triggers for second opinion scenarios
+- ✅ Automatically triggers for deep reasoning tasks
 - ✅ Does NOT trigger for local codebase questions
-- ✅ Selects appropriate model (sonar vs sonar-pro, etc.)
+- ✅ Selects appropriate model (sonar vs sonar-pro vs sonar-reasoning, etc.)
+- ✅ Understands when to use as subagent vs direct invocation
+- ✅ Complements (not replaces) other web tools
 - ✅ Includes context marker 🔍 in responses
 - ✅ Passes package_skill.py validation

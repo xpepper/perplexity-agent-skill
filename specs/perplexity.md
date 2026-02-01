@@ -1,6 +1,6 @@
-# Web Search via Perplexity CLI
+# Web Research and Deep Reasoning via Perplexity CLI
 
-When you need to search the web, look up documentation, research a topic, or answer a question that requires up-to-date information, use the `llm` CLI with the Perplexity plugin instead of MCP tools.
+Leverage the `llm` CLI with Perplexity plugin for web research, deep reasoning, and independent validation. Use when you need current/external knowledge, want a second opinion before decisions, or want to delegate complex analytical thinking to specialized reasoning models. This complements (not replaces) standard web tools.
 
 **Context Marker**: When working with this file, add `🔍` to your start-of-message markers.
 
@@ -39,12 +39,31 @@ llm -m sonar-reasoning 'your reasoning question'
 
 ## When to Use
 
+Use in three primary scenarios:
+
+### 1. Current or External Knowledge
 - Looking up current documentation, APIs, or library versions
 - Researching error messages or unfamiliar technologies
 - Verifying facts or checking for recent changes
 - Any question where your training data may be outdated
 
+### 2. Second Opinions
+- Getting independent validation before architecture decisions
+- Comparing technology choices or approaches
+- Verifying that your thinking about a problem is sound
+- Seeking alternative perspectives on design choices
+
+### 3. Deep Reasoning Delegation
+- Offloading complex multi-step reasoning to specialized models
+- Algorithmic problem solving and optimization
+- System architecture design
+- Trade-off analysis with many variables
+- Mathematical or quantitative reasoning
+
+**Note**: Can be invoked directly via Bash or spawned as a subagent for focused research.
+
 ## Do NOT Use For
 
 - Questions answerable from the local codebase (use grep/read instead)
-- Tasks that don't require web knowledge
+- Information already in conversation context
+- Simple factual questions answerable from training data

@@ -1,11 +1,11 @@
 ---
 name: perplexity-web-research
-description: Web search and research using Perplexity CLI for up-to-date information. Automatically triggers when Claude needs current documentation, API references, recent technology changes, error message research, library versions, or any information where training data may be outdated. More efficient than MCP tools - uses llm CLI with perplexity plugin instead of context-heavy MCP servers.
+description: Leverage Perplexity CLI for web research, deep reasoning, and independent validation. Use when you need current/external knowledge, want a second opinion before decisions, or want to delegate complex analytical thinking to specialized reasoning models. Complements (not replaces) standard web tools. Can be invoked directly or spawned as a subagent. More efficient than MCP servers - uses llm CLI with perplexity plugin.
 ---
 
 # Perplexity Web Research
 
-Use the `llm` CLI with Perplexity plugin for web searches and research tasks requiring up-to-date information.
+Use the `llm` CLI with Perplexity plugin for web research, deep reasoning, and independent validation.
 
 ## Quick Start
 
@@ -48,7 +48,11 @@ Choose the appropriate model based on query complexity:
 
 ## When to Use
 
-Automatically use this skill when:
+Use this skill in three primary scenarios:
+
+### 1. Current or External Knowledge
+
+When you need up-to-date information and intentionally want to use Perplexity instead of standard web fetch tools:
 
 - **Documentation lookups**: Current API docs, library references, framework guides
 - **Library versions**: "What's the latest version of X?"
@@ -58,41 +62,90 @@ Automatically use this skill when:
 - **Current events**: Recent news, announcements, releases
 - **Fact checking**: Information that may have changed since training cutoff
 
+### 2. Second Opinions
+
+When you want an independent perspective before committing to a decision or approach:
+
+- **Architecture decisions**: "What are the trade-offs between approach A and B?"
+- **Technology choices**: "Should I use X or Y for this use case?"
+- **Design validation**: "Is this approach considered best practice?"
+- **Problem verification**: "Am I thinking about this problem correctly?"
+- **Alternative perspectives**: "What other ways could this be solved?"
+
+### 3. Deep Reasoning Delegation
+
+When you want to offload complex analytical thinking to specialized reasoning models (even when information doesn't need to be current):
+
+- **Complex problem solving**: Multi-step reasoning requiring systematic analysis
+- **Algorithmic thinking**: "How should I optimize this algorithm?"
+- **System design**: "How should I architect this system?"
+- **Trade-off analysis**: Comparing multiple options with many variables
+- **Mathematical reasoning**: Calculations, proofs, or quantitative analysis
+
 ## When NOT to Use
 
 Do NOT use for:
 
 - **Local codebase questions**: Use grep/read tools instead
-- **Information in conversation context**: Use existing context
-- **Questions answerable from training data**: Standard programming concepts, well-established APIs
-- **Tasks not requiring web knowledge**: Code analysis, refactoring, local file operations
+- **Information already in context**: Use existing conversation context
+- **Simple factual questions**: Use your training data when sufficient
+- **Tasks requiring file operations**: Code analysis, refactoring, editing
+
+This skill complements, not replaces, standard web tools (WebFetch, WebSearch). Choose based on whether you want Perplexity's specific capabilities (reasoning models, synthesis, alternative perspective).
 
 ## Usage Examples
 
-### Documentation Lookup
+### Current Knowledge: Documentation Lookup
 ```bash
 llm -m sonar 'Next.js App Router documentation 2026'
 ```
 
-### Error Research
+### Current Knowledge: Error Research
 ```bash
 llm -m sonar 'ECONNREFUSED error when connecting to PostgreSQL'
 ```
 
-### Library Version Check
+### Current Knowledge: Library Version
 ```bash
 llm -m sonar 'latest stable version of React 2026'
 ```
 
-### Complex Research
+### Current Knowledge: Complex Research
 ```bash
 llm -m sonar-deep-research 'comparison of WebSocket vs Server-Sent Events for real-time updates in 2026'
 ```
 
-### Reasoning Task
+### Second Opinion: Architecture Decision
 ```bash
-llm -m sonar-reasoning 'how to calculate optimal database connection pool size based on concurrent users'
+llm -m sonar-pro 'trade-offs between microservices and monolith for a team of 5 engineers'
 ```
+
+### Second Opinion: Technology Choice
+```bash
+llm -m sonar 'should I use PostgreSQL or MongoDB for a social media analytics platform'
+```
+
+### Deep Reasoning: Algorithm Design
+```bash
+llm -m sonar-reasoning 'how to design an efficient caching strategy for a rate-limited API with bursty traffic patterns'
+```
+
+### Deep Reasoning: System Architecture
+```bash
+llm -m sonar-reasoning-pro 'design a scalable job queue system that handles both immediate and scheduled tasks with priority levels'
+```
+
+## Using as a Subagent
+
+This skill can be invoked directly within the conversation or spawned as a subagent for focused research:
+
+**Direct invocation**: Use the Bash tool to run `llm` commands inline when the query is straightforward and the result can be immediately incorporated.
+
+**Subagent invocation**: Spawn a subagent when:
+- Research requires multiple iterations or follow-up queries
+- You want the subagent to synthesize findings before reporting back
+- The reasoning task is complex enough to benefit from dedicated focus
+- You want to continue other work while research happens in parallel
 
 ## Context Marker
 
@@ -106,7 +159,22 @@ When using this skill, add 🔍 to start-of-message markers:
 
 If the `llm` CLI or Perplexity plugin is not installed, see [references/setup.md](references/setup.md) for installation instructions.
 
-## Efficiency Note
+## Relationship with Other Tools
+
+This skill **complements** standard web tools (WebFetch, WebSearch), not replaces them.
+
+**Use Perplexity** when you want:
+- Specialized reasoning models for complex analysis
+- Synthesis and perspective from multiple sources
+- Independent validation or second opinions
+- Specific Perplexity model capabilities
+
+**Use standard web tools** when you want:
+- Direct access to specific URLs or pages
+- Raw content from known sources
+- General web search without specialized reasoning
+
+### Why CLI over MCP?
 
 This skill uses the Perplexity CLI instead of MCP servers because:
 - **Lower token usage**: CLI results are more concise than MCP server overhead

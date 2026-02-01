@@ -6,7 +6,7 @@ An [Agent Skills](https://agentskills.io) package that leverages the Perplexity 
 
 **You need a Perplexity API key to use this skill.**
 
-- Get your API key at: https://www.perplexity.ai/settings/api
+- Get your API key at: https://www.perplexity.ai/account/api/keys
 - **Perplexity Pro subscribers** get $5 in free API credits each month 💰
 - Pay-as-you-go pricing available for non-subscribers
 

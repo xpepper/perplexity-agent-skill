@@ -1,6 +1,12 @@
 ---
 name: perplexity-web-research
 description: Leverage Perplexity CLI for web research, deep reasoning, and independent validation. Use when you need current/external knowledge, want a second opinion before decisions, or want to delegate complex analytical thinking to specialized reasoning models. Complements (not replaces) standard web tools. Can be invoked directly or spawned as a subagent.
+license: MIT
+compatibility: Requires llm CLI with llm-perplexity plugin and Perplexity API key
+metadata:
+  author: Pietro Di Bello
+  version: "1.0.0"
+allowed-tools: Bash(llm:*)
 ---
 
 # Perplexity Web Research

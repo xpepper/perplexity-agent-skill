@@ -107,7 +107,9 @@ The skill uses different Perplexity models based on the task:
 
 ## License
 
-[Add your license here]
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Pietro Di Bello
 
 ## Contributing
 

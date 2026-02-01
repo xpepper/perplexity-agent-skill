@@ -105,6 +105,22 @@ The skill uses different Perplexity models based on the task:
 - **llm CLI**: https://llm.datasette.io/
 - **llm-perplexity plugin**: https://github.com/hex/llm-perplexity
 
+## Development
+
+### Packaging the Skill
+
+After making changes to the skill, regenerate the `.skill` package:
+
+```bash
+./package-skill.sh
+```
+
+This script:
+- Validates the skill directory structure
+- Removes the old package
+- Creates a new zip archive with `.skill` extension
+- Excludes system files (.DS_Store, __pycache__, etc.)
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
@@ -113,4 +129,4 @@ Copyright (c) 2026 Pietro Di Bello
 
 ## Contributing
 
-[Add contribution guidelines if desired]
+Contributions are welcome! Please feel free to submit issues or pull requests.

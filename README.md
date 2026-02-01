@@ -1,6 +1,6 @@
 # Perplexity Web Research Skill
 
-A skill for Claude Code and GitHub Copilot that leverages the Perplexity CLI for web research, deep reasoning, and independent validation.
+An [Agent Skills](https://agentskills.io) package that leverages the Perplexity CLI for web research, deep reasoning, and independent validation. Compatible with any AI coding assistant that supports the Agent Skills standard (Claude Code, GitHub Copilot, Cursor, Windsurf, and 30+ other agents).
 
 ## What This Skill Does
 
@@ -35,9 +35,47 @@ This skill uses the Perplexity CLI (`llm` with `llm-perplexity` plugin) instead 
 
 ## Installation
 
+### Quick Install (Recommended)
+
+Use the [Vercel Skills CLI](https://github.com/vercel-labs/skills) to install for any compatible agent:
+
+```bash
+# For GitHub Copilot
+npx skills add xpepper/perplexity-agent-skill -a github-copilot
+
+# For Claude Code
+npx skills add xpepper/perplexity-agent-skill -a claude-code
+
+# For Cursor
+npx skills add xpepper/perplexity-agent-skill -a cursor
+
+# Or install for all agents
+npx skills add xpepper/perplexity-agent-skill
+```
+
+The skill will be automatically installed to the appropriate location for your agent and ready to use immediately.
+
+### Manual Installation
+
+Alternatively, install manually by copying the skill directory:
+
+**For VS Code / GitHub Copilot:**
+```bash
+git clone https://github.com/xpepper/perplexity-agent-skill.git
+cp -r perplexity-agent-skill/perplexity-web-research ~/.copilot/skills/
+```
+
+**For Claude Code:**
+```bash
+git clone https://github.com/xpepper/perplexity-agent-skill.git
+cp -r perplexity-agent-skill/perplexity-web-research ~/.claude/skills/
+```
+
+**For other agents:** Check your agent's documentation for the skills directory location.
+
 ### Prerequisites
 
-First, install the `llm` CLI and Perplexity plugin:
+The skill requires the `llm` CLI with Perplexity plugin:
 
 ```bash
 # Install llm CLI
@@ -58,23 +96,6 @@ llm -m sonar 'hello'
 ```
 
 For detailed setup instructions and troubleshooting, see [perplexity-web-research/references/setup.md](perplexity-web-research/references/setup.md).
-
-### Installing the Skill
-
-#### For Claude Code
-
-1. Download `perplexity-web-research.skill` from this repository
-2. Install the skill:
-   ```bash
-   claude install perplexity-web-research.skill
-   ```
-3. The skill will automatically trigger when Claude detects research, validation, or reasoning needs
-
-#### For GitHub Copilot
-
-1. Download `perplexity-web-research.skill` from this repository
-2. Install the skill following GitHub Copilot's skill installation process
-3. The skill will be available for web research and reasoning tasks
 
 ## Usage
 

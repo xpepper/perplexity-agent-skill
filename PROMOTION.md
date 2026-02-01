@@ -7,8 +7,8 @@
 ## 1. GitHub Preparation
 
 ### ✅ Checklist
-- [ ] Push all commits to GitHub
-- [ ] Add topics/tags to repository:
+- [x] Push all commits to GitHub ✓
+- [x] Add topics/tags to repository ✓
   - `agent-skills`
   - `ai-agents`
   - `claude-code`
@@ -19,12 +19,79 @@
 - [ ] Create a release/tag (v1.0.0)
 - [ ] Add social preview image (optional but recommended)
 
-### Commands
+### Create Release (Next Step)
+
+**Option 1: Command Line**
 ```bash
-git push origin main
-git tag -a v1.0.0 -m "Initial release"
+# Create and push tag
+git tag -a v1.0.0 -m "Initial release: Perplexity Web Research Agent Skill
+
+- Web research with current knowledge
+- Independent second opinions for decisions
+- Deep reasoning delegation to specialized models
+- Works with 30+ AI agents (Claude Code, Copilot, Cursor, etc.)
+- MIT licensed
+"
 git push origin v1.0.0
 ```
+
+**Option 2: GitHub UI (Recommended for first release)**
+1. Go to https://github.com/xpepper/perplexity-agent-skill/releases/new
+2. Click "Choose a tag" → type `v1.0.0` → "Create new tag"
+3. Release title: `v1.0.0 - Initial Release`
+4. Description:
+```markdown
+# Perplexity Web Research Agent Skill
+
+First public release! 🎉
+
+## Features
+- ✅ Web research with up-to-date information
+- ✅ Independent second opinions for architecture decisions
+- ✅ Deep reasoning delegation to specialized models
+- ✅ Works with 30+ AI agents (Claude Code, GitHub Copilot, Cursor, Windsurf, etc.)
+- ✅ Efficient CLI-based approach (no MCP overhead)
+- ✅ MIT licensed
+
+## Installation
+```bash
+npx skills add xpepper/perplexity-agent-skill
+```
+
+## What's Included
+- Comprehensive skill with 6 Perplexity models
+- Progressive disclosure design (minimal context usage)
+- Setup guide and troubleshooting
+- Validated against agentskills.io specification
+
+## Documentation
+See README.md for full documentation and usage examples.
+```
+5. Attach `perplexity-web-research.skill` file as release asset
+6. Check "Set as the latest release"
+7. Click "Publish release"
+
+### Add Social Preview Image
+
+**Quick Option: Use GitHub's Auto-Generated**
+GitHub will auto-generate one from your README, which often works well.
+
+**Custom Option: Create Your Own**
+1. Dimensions: 1280x640px (GitHub's recommended size)
+2. Content suggestions:
+   - Skill name: "Perplexity Web Research"
+   - Tagline: "Agent Skills for 30+ AI Coding Assistants"
+   - Key features icons/text
+   - GitHub username
+3. Upload:
+   - Go to repo Settings → General → Social preview
+   - Upload image
+   - Save changes
+
+**Need help creating an image?** Tools:
+- Canva (easiest, has templates)
+- Figma (more control)
+- Or skip for now - auto-generated works fine
 
 ## 2. Discovery Platforms
 

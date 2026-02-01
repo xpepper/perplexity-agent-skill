@@ -1,6 +1,6 @@
 ---
 name: perplexity-web-research
-description: Leverage Perplexity CLI for web research, deep reasoning, and independent validation. Use when you need current/external knowledge, want a second opinion before decisions, or want to delegate complex analytical thinking to specialized reasoning models. Complements (not replaces) standard web tools. Can be invoked directly or spawned as a subagent. More efficient than MCP servers - uses llm CLI with perplexity plugin.
+description: Leverage Perplexity CLI for web research, deep reasoning, and independent validation. Use when you need current/external knowledge, want a second opinion before decisions, or want to delegate complex analytical thinking to specialized reasoning models. Complements (not replaces) standard web tools. Can be invoked directly or spawned as a subagent.
 ---
 
 # Perplexity Web Research

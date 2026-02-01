@@ -167,10 +167,10 @@ This skill can be invoked directly within the conversation or spawned as a subag
 
 ## Context Marker
 
-When using this skill, add 🔍 to start-of-message markers:
+When using this skill, add 🔍 as a start-of-message marker.
 
 ```
-🍀 🔍 I will research Next.js App Router on Perplexity...
+🔍 I will research Next.js App Router on Perplexity...
 ```
 
 ## Setup

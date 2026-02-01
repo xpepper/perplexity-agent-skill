@@ -4,6 +4,24 @@ This guide covers installation and configuration of the `llm` CLI with the Perpl
 
 ## Prerequisites
 
+### 1. Perplexity API Key (Required)
+
+**You must have a Perplexity API key to use this skill.**
+
+#### Getting Your API Key
+
+1. Visit https://www.perplexity.ai/settings/api
+2. Create an API key or use an existing one
+3. Copy the key (you'll need it during configuration)
+
+#### Pricing & Credits
+
+- **Perplexity Pro subscribers**: Get $5 in free API credits each month 💰
+- **Pay-as-you-go**: Available for all users
+- Pricing details: https://docs.perplexity.ai/guides/pricing
+
+### 2. System Requirements
+
 Ensure you have Python and pip installed on your system.
 
 ## Installation

@@ -2,6 +2,14 @@
 
 An [Agent Skills](https://agentskills.io) package that leverages the Perplexity CLI for web research, deep reasoning, and independent validation. Compatible with any AI coding assistant that supports the Agent Skills standard (Claude Code, GitHub Copilot, Cursor, Windsurf, and 30+ other agents).
 
+## ⚠️ Requirements
+
+**You need a Perplexity API key to use this skill.**
+
+- Get your API key at: https://www.perplexity.ai/settings/api
+- **Perplexity Pro subscribers** get $5 in free API credits each month 💰
+- Pay-as-you-go pricing available for non-subscribers
+
 ## What This Skill Does
 
 This skill enables AI assistants to use Perplexity's specialized models for three primary purposes:
@@ -75,7 +83,14 @@ cp -r perplexity-agent-skill/perplexity-web-research ~/.claude/skills/
 
 ### Prerequisites
 
-The skill requires the `llm` CLI with Perplexity plugin:
+#### 1. Perplexity API Key (Required)
+
+You must have a Perplexity API key. Get yours at:
+- **API Settings**: https://www.perplexity.ai/settings/api
+- **Perplexity Pro subscribers**: Get $5 in free API credits each month
+- **Pay-as-you-go**: Available for all users
+
+#### 2. Install llm CLI with Perplexity Plugin
 
 ```bash
 # Install llm CLI
@@ -88,12 +103,16 @@ llm install llm-perplexity
 
 # Configure your Perplexity API key
 llm keys set perplexity
+# When prompted, paste your API key from https://www.perplexity.ai/settings/api
 ```
 
-Verify the setup:
+#### 3. Verify Setup
+
 ```bash
 llm -m sonar 'hello'
 ```
+
+If you see a response from Perplexity, you're all set! ✓
 
 For detailed setup instructions and troubleshooting, see [perplexity-web-research/references/setup.md](perplexity-web-research/references/setup.md).
 

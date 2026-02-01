@@ -44,7 +44,19 @@ Choose the appropriate model based on query complexity:
 - Need step-by-step problem solving
 - Math or algorithmic reasoning involved
 
-**Note**: Most models include real-time web search. Only use `r1-1776` when web search is not needed.
+**Use `sonar-reasoning-pro`** when:
+- Advanced reasoning with more comprehensive analysis needed
+- Complex multi-step logical problems
+- Need most thorough step-by-step explanations
+- Reasoning task benefits from deeper exploration
+
+**Use `r1-1776`** when:
+- Need specialized reasoning without web search
+- Pure analytical or logical tasks
+- Information is already known, just need reasoning applied
+- Want to avoid web search overhead
+
+**Note**: Most models include real-time web search. Only `r1-1776` omits web search for pure reasoning tasks.
 
 ## When to Use
 

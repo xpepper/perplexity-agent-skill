@@ -1,0 +1,114 @@
+# Perplexity Web Research Skill
+
+A skill for Claude Code and GitHub Copilot that leverages the Perplexity CLI for web research, deep reasoning, and independent validation.
+
+## What This Skill Does
+
+This skill enables AI assistants to use Perplexity's specialized models for three primary purposes:
+
+### 1. Current or External Knowledge
+- Documentation lookups and API references
+- Library versions and recent technology changes
+- Error message research
+- Current events and fact checking
+
+### 2. Independent Second Opinions
+- Architecture and design decision validation
+- Technology choice comparisons
+- Alternative perspectives on problem-solving approaches
+- Pre-implementation validation
+
+### 3. Deep Reasoning Delegation
+- Complex multi-step problem solving
+- Algorithmic optimization and system design
+- Trade-off analysis with many variables
+- Mathematical and quantitative reasoning
+
+## Why CLI over MCP?
+
+This skill uses the Perplexity CLI (`llm` with `llm-perplexity` plugin) instead of MCP servers because:
+
+- **Lower token usage**: CLI results are more concise than MCP server overhead, preserving valuable context window space
+- **Faster execution**: No server startup/connection delays - just direct bash command execution
+- **Simpler integration**: Straightforward CLI tool that works anywhere bash is available
+- **Complementary approach**: Works alongside standard web tools (WebFetch, WebSearch) rather than replacing them
+
+## Installation
+
+### Prerequisites
+
+First, install the `llm` CLI and Perplexity plugin:
+
+```bash
+# Install llm CLI
+pip install llm
+# Or using Homebrew
+brew install llm
+
+# Install the Perplexity plugin
+llm install llm-perplexity
+
+# Configure your Perplexity API key
+llm keys set perplexity
+```
+
+Verify the setup:
+```bash
+llm -m sonar 'hello'
+```
+
+For detailed setup instructions and troubleshooting, see [perplexity-web-research/references/setup.md](perplexity-web-research/references/setup.md).
+
+### Installing the Skill
+
+#### For Claude Code
+
+1. Download `perplexity-web-research.skill` from this repository
+2. Install the skill:
+   ```bash
+   claude install perplexity-web-research.skill
+   ```
+3. The skill will automatically trigger when Claude detects research, validation, or reasoning needs
+
+#### For GitHub Copilot
+
+1. Download `perplexity-web-research.skill` from this repository
+2. Install the skill following GitHub Copilot's skill installation process
+3. The skill will be available for web research and reasoning tasks
+
+## Usage
+
+The skill automatically triggers when the AI assistant needs:
+- Current documentation or up-to-date information
+- Independent validation of decisions or approaches
+- Complex reasoning or analytical thinking delegation
+
+It can be invoked directly (inline Perplexity queries) or spawned as a subagent for focused research.
+
+### Model Selection
+
+The skill uses different Perplexity models based on the task:
+
+| Model | Use Case | Context |
+|-------|----------|---------|
+| `sonar` | Quick lookups, general questions | 128k |
+| `sonar-pro` | Thorough research (flagship model) | 200k |
+| `sonar-deep-research` | Complex multi-faceted research | 128k |
+| `sonar-reasoning` | Step-by-step reasoning | 128k |
+| `sonar-reasoning-pro` | Advanced reasoning tasks | 128k |
+
+## Documentation
+
+- **Full skill documentation**: [perplexity-web-research/SKILL.md](perplexity-web-research/SKILL.md)
+- **Implementation plan**: [specs/perplexity-skill-plan.md](specs/perplexity-skill-plan.md)
+- **Setup guide**: [perplexity-web-research/references/setup.md](perplexity-web-research/references/setup.md)
+- **llm CLI**: https://llm.datasette.io/
+- **llm-perplexity plugin**: https://github.com/hex/llm-perplexity
+
+## License
+
+[Add your license here]
+
+## Contributing
+
+[Add contribution guidelines if desired]

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires llm CLI with llm-perplexity plugin and Perplexity API key
 metadata:
   author: Pietro Di Bello
-  version: "1.1.0"
+  version: "1.2.0"
 allowed-tools: Bash(llm:*)
 ---
 
@@ -80,6 +80,16 @@ Do NOT use for:
 - **Tasks requiring file operations**: Code analysis, refactoring, editing
 
 This skill complements, not replaces, standard web tools (WebFetch, WebSearch). Choose based on whether you want Perplexity's specific capabilities (reasoning models, synthesis, alternative perspective).
+
+## Query Best Practices
+
+Craft effective queries for better results:
+- Be specific and detailed rather than vague
+- Include time constraints for current information
+- Specify output format when helpful
+- Use domain-appropriate terminology
+
+For comprehensive query strategies and examples, see [references/query-strategies.md](references/query-strategies.md).
 
 ## Usage Examples
 

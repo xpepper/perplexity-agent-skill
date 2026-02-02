@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires llm CLI with llm-perplexity plugin and Perplexity API key
 metadata:
   author: Pietro Di Bello
-  version: "1.0.0"
+  version: "1.1.0"
 allowed-tools: Bash(llm:*)
 ---
 

@@ -155,22 +155,22 @@ Improve answers by indicating preferred format:
 
 ### Too Vague
 
-❌ **Problem:** "Tell me about databases"  
+❌ **Problem:** "Tell me about databases"
 ✅ **Solution:** "What are the key differences between PostgreSQL and MongoDB for an e-commerce application with complex relational data?"
 
 ### Multiple Unrelated Questions
 
-❌ **Problem:** "How do webhooks work and what is serverless and explain GraphQL?"  
+❌ **Problem:** "How do webhooks work and what is serverless and explain GraphQL?"
 ✅ **Solution:** Ask three separate queries for each topic.
 
 ### Assumed Knowledge Without Context
 
-❌ **Problem:** "What are the latest features?" (Latest features of what?)  
+❌ **Problem:** "What are the latest features?" (Latest features of what?)
 ✅ **Solution:** "What are the new features in TypeScript 5.5 released in 2026?"
 
 ### Loaded Questions
 
-❌ **Problem:** "Why is framework X better than framework Y?"  
+❌ **Problem:** "Why is framework X better than framework Y?"
 ✅ **Solution:** "Compare framework X vs framework Y in terms of performance, developer experience, and ecosystem maturity based on recent benchmarks."
 
 ## Domain-Specific Keywords
